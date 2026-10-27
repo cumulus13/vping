@@ -1,0 +1,46 @@
+[build-system]
+requires = [
+    "setuptools>=61.0.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vping"
+version = "1.0.1"
+description = "Fast, robust host alive checker with icmplib and TCP fallback"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Networking",
+]
+keywords = [
+    "ping",
+    "network",
+    "host-checker",
+    "icmplib",
+    "tcp-scan",
+    "lan",
+]
+dependencies = [
+    "icmplib>=2.1.1; sys_platform != 'win32' or python_version >= '3.8'",
+]
+authors = [
+    { name = "Hadi Cahyadi", email = "cumulus13@gmail.com" },
+]
+maintainers = [
+    { name = "cumulus13", email = "cumulus13@gmail.com" },
+]
+
+[project.license]
+text = "MIT"
+
+[project.scripts]
+vping = "vping.__main__:main"
